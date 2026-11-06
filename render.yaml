@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: dar-alsalam
+    runtime: node
+    plan: 0.5c-512mb
+    region: frankfurt
+    buildCommand: echo "No build step required"
+    startCommand: node server.mjs
+    healthCheckPath: /healthz
+    disk:
+      name: dar-alsalam-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/data
+      - key: INITIAL_ADMIN_USERNAME
+        value: admin
+      - key: INITIAL_ADMIN_NAME
+        value: مشرف دار السلام
+      - key: INITIAL_ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_RECOVERY_CODE
+        sync: false

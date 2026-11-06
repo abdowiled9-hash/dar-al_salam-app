@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff8f2">
+  <title>دار السلام | إدارة الحضانة</title>
+  <link rel="stylesheet" href="/style.css?v=20261106-5">
+</head>
+<body>
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <div class="brand-mark">د</div>
+      <div class="brand-name">دار السلام <span>إدارة الحضانة</span></div>
+      <h1>أهلًا بكم 👋</h1>
+      <p class="login-intro">سجّل الدخول لمتابعة يومك وفريق الحضانة.</p>
+      <form id="login-form">
+        <div class="field"><label for="login-role">نوع الحساب</label><select class="select" id="login-role"><option value="admin">مشرف</option><option value="staff">موظف</option></select></div>
+        <div class="field"><label for="login-username">اسم المستخدم</label><input class="input" id="login-username" name="username" autocomplete="username" required placeholder="اكتب اسم المستخدم"></div>
+        <div class="field"><label for="login-password">كلمة المرور</label><input class="input" id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="اكتب كلمة المرور"></div>
+        <div id="login-error" class="error hidden"></div>
+        <button class="primary login-submit" type="submit">تسجيل الدخول</button>
+      </form>
+      <button class="login-forgot" type="button" data-action="admin-forgot-password">نسيت كلمة مرور المشرف؟</button>
+      <div class="login-hint">إذا نسيت كلمة المرور، استخدم رمز استعادة المشرف الذي أعدّه مالك النظام.</div>
+    </div>
+    <div class="login-illustration"><span>🧸</span><h2>يوم جميل يبدأ<br>بابتسامة صغيرة</h2><p>كل تفاصيل فريقك في مكان واحد.</p></div>
+  </div>
+
+  <div id="app-screen" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">د</div><div class="brand-name">دار السلام<span>إدارة الحضانة</span></div></div>
+      <div class="nav-caption">القائمة الرئيسية</div><nav id="sidebar"></nav>
+      <div class="sidebar-bottom"><div class="user-chip"><div class="avatar">👩🏻</div><div class="spacer"><strong id="user-name"></strong><small id="user-role"></small></div><button class="icon-btn" data-action="password-change" title="تغيير كلمة المرور">⚙</button></div><button class="logout-link" data-action="logout">↪ تسجيل الخروج</button></div>
+    </aside>
+    <main class="content"><header class="topbar"><div class="mobile-brand"><div class="brand-mark">د</div><strong>دار السلام</strong></div><div class="topbar-date">🌤️ <span id="top-date"></span></div><button class="icon-btn notification-btn" data-action="notifications" aria-label="الإعلانات">♧</button></header><div id="main" class="main-content"></div></main>
+    <nav id="mobile-nav" class="mobile-nav"></nav>
+  </div>
+  <div id="modal-host"></div><div id="toast" class="toast" role="status"></div>
+  <script src="/app.js?v=20261106-5"></script>
+</body>
+</html>
